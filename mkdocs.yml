@@ -1,0 +1,43 @@
+site_name: Scrawler Components
+repo_url: https://github.com/scrawler-labs/
+repo_name: Github
+
+        
+extra_css:
+  - css/extra.css
+
+extra_javascript:
+  - js/extra.js
+
+theme:
+  name: material
+  logo: assets/logo.png
+  icon:
+    repo: fontawesome/brands/github
+
+  
+  palette:
+    # Palette toggle for dark mode
+    scheme: scrawler
+
+
+  features:
+    - navigation.section
+    - navigation.expand
+    - navigation.top
+    - navigation.path
+    - navigation.tabs
+    - toc.integrate
+    - search.suggest
+    - search.highlight
+    - content.tabs.link
+    - navigation.footer
+
+
+markdown_extensions:
+  - admonition
+  - pymdownx.details
+
+extra:
+  generator: false
+
