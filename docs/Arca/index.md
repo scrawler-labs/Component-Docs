@@ -19,7 +19,7 @@
 ## Installation
 You can install Arca ORM via Composer. If you don't have composer installed , you can download composer from [here](https://getcomposer.org/download/)
 
-```
+```shell
 composer require scrawler/arca
 ```
 
