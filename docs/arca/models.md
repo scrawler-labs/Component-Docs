@@ -67,5 +67,5 @@ $users->toString();
 ```
 !!! info 
 
-    To learn more visit [Collections doc](https://github.com/scrawler-labs/arca-orm/wiki/6.-Collections)
+    To learn more visit [Collections doc](collections.md)
 
