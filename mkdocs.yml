@@ -2,6 +2,26 @@ site_name: Scrawler Components
 repo_url: https://github.com/scrawler-labs/
 repo_name: Github
 
+nav:
+    - Home: 'index.md'
+    - Arca Orm: 
+        - Getting Started: 'arca-orm/index.md'
+        - Database & Drivers: 'arca-orm/database.md'
+        - Models & Collections: 'arca-orm/models.md'
+        - CRUD: 'arca-orm/crud.md'
+        - Finding (Query): 'arca-orm/finding.md'
+        - Relations: 'arca-orm/relations.md'
+        - Collections: 'arca-orm/collections.md'
+        - Using with Swoole & AmpPHP: 'arca-orm/swoole.md'
+        - Changelog: 'arca-orm/changelog.md'
+
+    - Router:
+        - Getting started: 'router/index.md'
+        - Automated Routing: 'router/how.md'
+        - Website Homepage: 'router/home.md'
+        - Redirection: 'router/redirect.md'
+        - Server Configuration: 'router/server.md'
+
         
 extra_css:
   - css/extra.css
