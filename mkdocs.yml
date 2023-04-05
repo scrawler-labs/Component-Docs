@@ -31,7 +31,6 @@ theme:
     - search.suggest
     - search.highlight
     - content.tabs.link
-    - navigation.footer
 
 
 markdown_extensions:
