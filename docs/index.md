@@ -5,12 +5,11 @@
 
 
 ## Components
-- [Scrawler Router](https://github.com/scrawler-labs/router) - A Fully Automatic RESTful PHP Router 
-- [Arca ORM](https://github.com/scrawler-labs/arca-orm) - Low code , Zero Configuration ORM that creates models, config, database and tables on the fly.
-- [Swoole Postgres Doctrine](https://github.com/scrawler-labs/swoole-postgresql-doctrine) - A Doctrine DBAL Driver implementation on top of Swoole Coroutine PostgreSQL extension, built for [Doctrine DBAL](https://www.doctrine-project.org/projects/dbal.html) and [Arcac ORM](https://github.com/scrawler-labs/arca-orm)
-- [Swoole Cache](https://github.com/scrawler-labs/swoole-cache) - A High speed , PSR-16 compatible cache library based on swoole-tables
+- <b>Scrawler Router</b> - A Fully Automatic RESTful PHP Router [[Docs](router/index.md)] [[Github](https://github.com/scrawler-labs/router)] 
+- <b>Arca ORM</b> - Low code , Zero Configuration ORM that creates models, config, database and tables on the fly [[Docs](arca/index.md)] [[Github](https://github.com/scrawler-labs/arca-orm)]
+- <b>Swoole Postgres Doctrine</b> - A Doctrine DBAL Driver implementation on top of Swoole Coroutine PostgreSQL extension, built for Doctrine DBAL and Arcac ORM [[Github](https://github.com/scrawler-labs/swoole-postgresql-doctrine)]
+- <b>Swoole Cache</b> - A High speed , PSR-16 compatible cache library based on swoole-tables [[Github]((https://github.com/scrawler-labs/swoole-cache))]
 
-The work for scrawler 3 core is actively done on [https://github.com/scrawler-labs/core](https://github.com/scrawler-labs/core) 
 
 ## Community
 We have recently started new community effort around Scrawler Framework, you are invited to join our [Discord Server](https://discord.gg/Ecu9u6yg), or you can be a part of [discussion](https://github.com/orgs/scrawler-labs/discussions) on our [Github coummunity](https://github.com/orgs/scrawler-labs/discussions)

@@ -6,14 +6,14 @@
 - Save loads of time while working on database
 - Built upon stable foundation of Doctrine Dbal and extensively tested
 - Thanks to [loophp](https://github.com/loophp/collection) Arca comes with Lazy collection and tons of helper collection functions
-- Supports lots database platforms , you can see the complete list [here](https://github.com/scrawler-labs/arca-orm/wiki/1.-Database-and-Drivers)
-- Supports concurrent queries and connection pooling with swoole and async with amphp. Check out integration docs [here](https://github.com/scrawler-labs/arca-orm/wiki/7.-Using-with-Swoole-and-Amphp)
+- Supports lots database platforms , you can see the complete list [here](arca-orm/database.md)
+- Supports concurrent queries and connection pooling with swoole and async with amphp. Check out integration docs [here](arca-orm/swoole.md)
 
 
 ## Requirements
 - PHP 8.1 or greater
 - PHP PDO or other supported database adapter
-- Mysql, MariaDB, Sqlite or any other supported database. check the list [here]([https://www.doctrine-project.org/projects/doctrine-dbal/en/latest/reference/platforms.html#platforms](https://github.com/scrawler-labs/arca-orm/wiki/1.-Database-and-Drivers)) 
+- Mysql, MariaDB, Sqlite or any other supported database. check the list [here](arca-orm/database.md)
 
 
 ## Installation
@@ -46,7 +46,7 @@ composer require scrawler/arca
     $db = \Scrawler\Arca\Facade\Database::connect($connectionParams);
     
 ```
-For complete list of driver check [here](https://github.com/scrawler-labs/arca-orm/wiki/1.-Database-and-Drivers)
+For complete list of driver check [here](arca-orm/database.md)
 
 !!! info "ID and UUID"
 
