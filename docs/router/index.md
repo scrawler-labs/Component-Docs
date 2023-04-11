@@ -2,8 +2,9 @@
 
 ## Why use Scrawler Router?
 - Fully automatic, you dont need to define single manual route.
+- Support manual route defination for your edge use case.
 - No configrations , works out of the box with any php project.
-- Stable and used internally within many [Corpuvision](https://corpusvision.com)'s projects
+- Stable and well tested.
 - Saves lot of time while building RESTful applications
 
 ## Installation
