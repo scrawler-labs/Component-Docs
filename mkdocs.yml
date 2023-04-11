@@ -17,6 +17,7 @@ nav:
 
     - Router:
         - Getting started: 'router/index.md'
+        - Manual Routing: 'router/manual.md'
         - Automated Routing: 'router/how.md'
         - Website Homepage: 'router/home.md'
         - Redirection: 'router/redirect.md'

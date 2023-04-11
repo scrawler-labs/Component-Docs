@@ -55,3 +55,26 @@ $collection->get( "/name/:string",function($name){
 });
 
 ```
+
+## Routing with regex
+You can also use regex patterns for your routes, above examples can also be written as
+
+```php
+
+$collection->get( "/",function(){
+    return 'Hello'
+});
+
+$collection->get( "/page/([0-9]+)",function($page){
+    return 'Page number is :'.$page
+});
+
+$collection->get( "/product/([a-zA-Z0-9-_]+)",function($product){
+    return 'Product is :'.$product
+});
+
+$collection->get( "/name/([a-zA-Z]+)",function($name){
+    return 'Name is :'.$name
+});
+
+```
