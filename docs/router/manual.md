@@ -7,16 +7,18 @@ Manual routes always takes precedence over automated routes
 
 ```php
 <?php
-$collection = new RouteCollection($dir,$namespace)
+// Initialize Router 
+//$router = new Router();
+//$router->register($dir,$namespace);
 
 // GET /hello
-$collection->get('/hello',function(){
+$router->get('/hello',function(){
     return 'Hello World';
 })
 
-$router = new Router($collection);
-$response = $router->dispatch();
-$response->send();
+//Handle the response
+//[$status,$handler,$args,$debug] = $router->dispatch($httpMethod,$uri);
+
 
 ```
 
@@ -26,10 +28,10 @@ Manual routes can be defined by diffining endpoint on diffrent http methods
 ```php
 <?php
 
-$collection->get($route,$callable)
-$collection->post($route,$callable)
-$collection->put($route,$callable)
-$collection->delete($route,$callable)
+$router->get($route,$callable)
+$router->post($route,$callable)
+$router->put($route,$callable)
+$router->delete($route,$callable)
 
 ```
 
@@ -38,19 +40,19 @@ You can also define `:numeric` , `:string` and `:alpha` as pattern in your route
 
 ```php
 
-$collection->get( "/",function(){
+$router->get( "/",function(){
     return 'Hello'
 });
 
-$collection->get( "/page/:number",function($page){
+$router->get( "/page/:number",function($page){
     return 'Page number is :'.$page
 });
 
-$collection->get( "/product/:alpha",function($product){
+$router->get( "/product/:alpha",function($product){
     return 'Product is :'.$product
 });
 
-$collection->get( "/name/:string",function($name){
+$router->get( "/name/:string",function($name){
     return 'Name is :'.$name
 });
 
@@ -61,19 +63,19 @@ You can also use regex patterns for your routes, above examples can also be writ
 
 ```php
 
-$collection->get( "/",function(){
+$router->get( "/",function(){
     return 'Hello'
 });
 
-$collection->get( "/page/([0-9]+)",function($page){
+$router->get( "/page/([0-9]+)",function($page){
     return 'Page number is :'.$page
 });
 
-$collection->get( "/product/([a-zA-Z0-9-_]+)",function($product){
+$router->get( "/product/([a-zA-Z0-9-_]+)",function($product){
     return 'Product is :'.$product
 });
 
-$collection->get( "/name/([a-zA-Z]+)",function($name){
+$router->get( "/name/([a-zA-Z]+)",function($name){
     return 'Name is :'.$name
 });
 
