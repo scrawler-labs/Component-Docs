@@ -16,42 +16,52 @@ composer require scrawler/router
 
 ## Setup
 
+Note 4.x release changes the way router handles request and response, if you still wanna continue using old way with symfony components goto [3.x branch](https://github.com/scrawler-labs/router/tree/3.x) 
+
 ```php
 <?php
 
-use Scrawler\Router\RouteCollection;
 use Scrawler\Router\Router;
-use Symfony\Component\HttpFoundation\Response;
-use Symfony\Component\HttpFoundation\Request;
 
+$dir = '/path/to/your/controllers';
+$namespace = 'Namespace\of\your\controllers';
 
-$dir = /path/to/your/controllers;
-$namespace = Namespace\of\your\controllers;
-
-$collection = new RouteCollection($dir,$namespace)
+$router = new Router();
+// Register your directory for automatic routing
+$router->register($dir,$namespace);
 
 /**
-* As of v3.2.0 you can now enblae route caching and optionally pass your own PSR 16 implementation
-* $collection = new RouteCollection($dir,$namespace,true);
-* OR with your own cache adapter
-* $cache = new Psr\SimpleCache\CacheInterface(); 
-* $collection = new RouteCollection($dir,$namespace,true,$cache);
+* you can now also enblae route caching by passing your own PSR 16 implementation
+* $cache = new Psr\SimpleCache\CacheInterface();
+* $router->enableCache($cache);
 **/
 
-$router = new Router($collection);
-//Optional you can now pass your own Request object to Router for Router to work on
-//$router = new Router($collection,Request $request);
+// Fetch method and URI from somewhere
+$httpMethod = $_SERVER['REQUEST_METHOD'];
+$uri = $_SERVER['REQUEST_URI'];
 
+// Strip query string (?foo=bar) and decode URI
+if (false !== $pos = strpos($uri, '?')) {
+    $uri = substr($uri, 0, $pos);
+}
+$uri = rawurldecode($uri);
 
 //Dispatch route and get back the response
-$response = $router->dispatch();
-// Or Alternatively you can pass header as optional argument
-//$response = $router->dispatch(['content-type' => 'application/json']);
+[$status,$handler,$args,$debug] = $router->dispatch($httpMethod,$uri);
+switch ($status){
+  case \Scrawler\Router\Router::NOT_FOUND:
+    //handle 404 error
+    // $debug contains extra debug info useful to check failure in automatic routing
+    break;
+  case \Scrawler\Router\Router::METHOD_NOT_ALLOWED:
+    //handle 405 method not allowed
+    break;
+  case \Scrawler\Router\Router::FOUND:
+    //call the handler
+    $response = call_user_func($handler,...$args);
+    // Send Response
+    //echo $response
+}
 
-
-//Do anything with your Response object here
-//Probably middleware can hook in here
-
-//send response
-$response->send();
 ```
+Done now whatever request occurs it will be automatically routed . You don't have define a single route
